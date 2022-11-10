@@ -16,13 +16,16 @@ public class Main {
         int count = 0;
 
         while(true){
-            // for checking if the input valid or not
+            // checking if the input valid or not
             boolean hasNextInt = scanner.hasNextInt();
             if(hasNextInt){
+                // if valid sum the input number
                 int num = scanner.nextInt();
                 sum += num;
                 count++;
             }else{
+                // to prevent division by 0, increase the value of count by 1
+                // break the loop
                 if(count == 0){
                     count++;
                 }
@@ -30,6 +33,8 @@ public class Main {
             }
         }
 
+        // Check the pure avg value of input number
+        // and convert it to long since we want to show the rounded number
         double pureAvg = (double) sum / count;
         long avg = Math.round(pureAvg);
 
